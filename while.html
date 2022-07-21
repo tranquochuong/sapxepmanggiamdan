@@ -7,22 +7,29 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="number" id="a" placeholder="Nhập a">
+    <button onclick="Add()">Add</button>
+    <button onclick="Arrange()">Arrange</button>
+    <div id="Result">Hiện mảng a:</div>
+    <div id="Result2">Rearrange:</div>
     <script>
-        let i;
-        let j;
-            while(true){
-                for( i =1, j = 1; i< 6 && j <6;){
-                    console(i+"."+j);
-                i++; 
-                j++;
-            }
-        }
-                      
-                
+        let x = 0;
+        let array = Array();
+        function Add(){
+            array[x] = document.getElementById("a").value;
+            x++;
+            let e= "<br>";
+            for( let i = 0; i < array.length; i++){
+                e+= array[i]+ "<br>";
+            } document.getElementById("Result").innerHTML =e;
+           }
+         
+           function Arrange(){
+            array.sort((a,b) => b -a); 
+           document.getElementById("Result2").innerHTML =array;
 
-
-
- 
+         }
+     
+    
     </script>
-</body>
 </html>
